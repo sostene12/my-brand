@@ -67,5 +67,14 @@ main .intro-word{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 85vh;
+}
+
+.intro-word h1{
+    font-size: 50px;
+    font-weight: bolder;
+    margin-bottom: 60px;
+}
+.intro-word h1 span:last-child{
+    color: var(--bule);
 }
