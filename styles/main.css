@@ -1,6 +1,71 @@
+:root{
+    --gray:rgba(217, 217, 217, 0.7);
+    --bule:#0047FF;
+    --white:#FFFEFE;
+}
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+}
+
+.landingpage{
+    background-color: var(--gray);
+    height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    width: 95vw;
+    margin: 0px auto;
+}
+
+.logo h2{
+    font-weight: 600;
+    font-size: 35px;
+}
+.logo h2 span:last-child{
+    color: var(--bule);
+}
+
+.nav-items{
+    display: flex;
+    align-items: center;
+}
+
+.nav-items ul{
+    display: flex;
+}
+
+.nav-items ul li{
+    justify-content: space-evenly;
+    list-style: none;
+    font-weight: 500;
+    padding: 0px 25px;
+    font-size: 17px;
+}
+
+.active{
+    color: var(--bule);
+}
+
+ .button{
+    padding: 6px 22px;
+    border: none;
+    background-color: var(--bule);
+    font-weight: bold;
+    border-radius: 5px;
+    color: var(--white);
+}
+
+main .intro-word{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
