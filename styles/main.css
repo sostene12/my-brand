@@ -243,3 +243,32 @@ main .intro-word{
 }
 
 /* BLOG SECTION */
+.blog-section{
+    background-color: var(--gray);
+}
+
+
+/* footer */
+footer{
+    background-color: var(--gray);
+    padding: 20px 0px;
+    margin-top: 10px;
+}
+.footer-elements{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 0px auto;
+}
+
+.icons i{
+    color: var(--bule);
+    font-size: 25px;
+    padding: 0px 15px;
+    cursor: pointer;
+}
+
+.icons i:hover{
+    scale: 1.2;
+}
