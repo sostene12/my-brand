@@ -291,6 +291,61 @@ main .intro-word{
    cursor: pointer;
 }
 
+/* CONTACT SECTION */
+.contact-section{
+    width: 90vw;
+    margin: 30px auto;
+}
+
+.contact-section h2{
+    color: var(--bule);
+    padding-bottom: 30px;
+}
+
+.contacts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contacts div:first-child{
+    background-color: var(--gray);
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contacts form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0px auto;
+}
+
+form label{
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+form input,textarea{
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form input,textarea:focus{
+    outline: none;
+}
+
+.contacts .image-contact{
+    width: 45%;
+}
+
+.contacts .image-contact img{
+    width: 100%;
+    object-fit: contain;
+}
+
 /* footer */
 footer{
     background-color: var(--gray);
