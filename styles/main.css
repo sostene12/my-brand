@@ -428,10 +428,6 @@ footer span{
 
 /* Responsiveness */
 @media screen and (max-width:768px) {
-    /* nav{
-        width: 95vw;
-    } */
-    /* landing page */
     .landingpage{
         width: 100vw;  
         height: 70vh; 
