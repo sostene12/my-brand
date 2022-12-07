@@ -21,22 +21,30 @@
     />
   </head>
   <body>
-    <section class="landingpage">
-      <nav>
-        <div class="logo">
-          <h2><span>NG</span><span>SO</span></h2>
-        </div>
-        <div class="nav-items">
-          <ul>
-            <li class="active">Home</li>
-            <li>About Me</li>
-            <li>Portifolio</li>
-            <li>My Blog</li>
-            <li>Contact Me</li>
-          </ul>
-          <button class="button">Login</button>
-        </div>
-      </nav>
+    <section class="landingpage" id="landingpage">
+      <div class="nav-container">
+        <nav>
+          <div class="logo">
+            <h2><span>NG</span><span>SO</span></h2>
+          </div>
+          <div class="nav-items">
+            <ul>
+              <li><a href="#landingpage" class="active">Home</a></li>
+              <li><a href="#about-me">About Me</a></li>
+              <li><a href="#services-section">Services</a></li>
+              <li><a href="#portifolio-section">Portifolio</a></li>
+              <li><a href="#blog-section">My Blog</a></li>
+              <li><a href="#contact-section">Contact Me</a></li>
+            </ul>
+            <button class="button">Login</button>
+          </div>
+          <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
       <main>
         <div class="intro-word">
           <h1><span>Welcome to My</span><span>Portifolio.</span></h1>
@@ -52,7 +60,7 @@
         </div>
       </main>
     </section>
-    <section class="about-me">
+    <section id="about-me" class="about-me">
       <div class="description">
         <h2>About Me</h2>
         <h1>FULLSTACK DEVELOPER</h1>
@@ -68,7 +76,7 @@
         <img src="./images//profile.png" alt="" />
       </div>
     </section>
-    <section class="services-section">
+    <section id="services-section" class="services-section">
       <div class="services">
         <h2>Services</h2>
         <div class="cards-section">
@@ -100,7 +108,7 @@
       </div>
     </section>
 
-    <section class="portifolio-section">
+    <section id="portifolio-section" class="portifolio-section">
       <h2>Portifolio</h2>
       <div class="cards-section">
         <div class="card">
@@ -120,7 +128,7 @@
       </div>
     </section>
 
-    <section class="blog-section">
+    <section id="blog-section" class="blog-section">
       <div class="blog">
         <h2>My Blog</h2>
         <div class="cards-section">
@@ -143,7 +151,7 @@
       </div>
     </section>
 
-    <section class="contact-section">
+    <section id="contact-section" class="contact-section">
      
         <div class="contacts">
             
@@ -156,6 +164,7 @@
                     <input type="text" >
                     <label for="message">Message</label>
                     <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <button class="button">Submit</button>
                 </form>
             </div>
             <div class="image-contact">
