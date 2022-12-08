@@ -15,6 +15,7 @@ body{
     max-width: 100vw;
     height: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* landing page */
@@ -61,6 +62,7 @@ nav{
 
 .nav-items ul{
     display: flex;
+    align-items: center;
 }
 
 .nav-items ul li{
@@ -69,6 +71,34 @@ nav{
     font-weight: 500;
     padding: 0px 25px;
     font-size: 17px;
+}
+
+.nav-contents{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--gray);
+    position: absolute;
+    right: -100%;
+    top: 0;
+    z-index: 0;
+    transition: all ease-in 0.3s;
+    display: none;
+}
+
+.nav-contents.open{
+    right: 0;
+}
+
+.nav-contents ul{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+
+.nav-contents ul li{
+    list-style: none;
+    padding: 5px;
+    font-weight: bold;
 }
 
 a{
@@ -107,6 +137,18 @@ a:hover{
     height: 2px;
     background-color: var(--bule);
     margin-bottom: 6px;
+    transition: all ease-in 0.3s;
+}
+
+.burger.open span:nth-child(1){
+    transform: rotate(45deg) translateY(10px);
+}
+.burger.open span:nth-child(2){
+    opacity: 0;
+}
+
+.burger.open span:nth-child(3){
+    transform: rotate(-45deg) translateY(-10px);
 }
 
 /* main{
@@ -478,12 +520,19 @@ footer span{
 
 /* Responsiveness */
 @media screen and (max-width:768px) {
+    body{
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
     .landingpage{
         width: 100vw;  
         height: 70vh; 
     }
     .nav-items{
         display: none;
+    }
+    .nav-contents{
+        display: block;
     }
     .burger{
         display: block;

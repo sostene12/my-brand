@@ -20,7 +20,6 @@ navItems.forEach(item =>{
 });
 
 
-const bars = document.querySelector('.burger');
 
 
 // toggle login
@@ -34,4 +33,14 @@ loginBtn.addEventListener('click',() =>{
 const closeBtn = document.querySelector('.close-icon');
 closeBtn.addEventListener('click',() =>{
     loginSection.style.display = 'none'
-})
+});
+
+
+const bars = document.querySelector('.burger');
+bars.addEventListener('click',(e) =>{
+    const navLinks = document.querySelector('.nav-links');
+    const navContents = document.querySelector('.nav-contents');
+    navContents.appendChild(navLinks)
+    navContents.classList.toggle('open')
+    bars.classList.toggle('open')
+});
