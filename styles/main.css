@@ -11,6 +11,11 @@
     font-family: 'Inter', sans-serif;
     color: var(--dark-blue);
 }
+body{
+    max-width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+}
 
 /* landing page */
 
@@ -417,6 +422,20 @@ footer{
     background-color: rgba(0, 0, 0, 0.405);
     height: 100vh;
     width: 100vw;
+    display: none;
+}
+
+.login-section .close-icon{
+    font-size: 30px;
+    color: var(--white);
+    text-align: right;
+    padding: 20px 40px;
+
+}
+
+.login-section .close-icon i{
+    color: var(--white);
+    cursor: pointer;
 }
 
 .login{

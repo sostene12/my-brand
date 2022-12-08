@@ -1,3 +1,4 @@
+// scroll change background
 window.onscroll = function(event){
     let navbar = document.getElementsByClassName("nav-container");
     if((window.innerHeight + window.scrollY) > window.innerHeight){
@@ -21,3 +22,16 @@ navItems.forEach(item =>{
 
 const bars = document.querySelector('.burger');
 
+
+// toggle login
+const loginBtn = document.querySelector('.login-btn');
+const loginSection = document.querySelector('.login-section')
+loginBtn.addEventListener('click',() =>{
+    loginSection.style.display = 'block'
+    window.scrollTo(0, 0);
+});
+
+const closeBtn = document.querySelector('.close-icon');
+closeBtn.addEventListener('click',() =>{
+    loginSection.style.display = 'none'
+})
