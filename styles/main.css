@@ -126,6 +126,10 @@ a:hover{
     cursor: pointer;
 }
 
+.button a{
+    color: var(--white);
+} 
+
 .burger{
     display: relative;
     cursor: pointer;
