@@ -123,3 +123,12 @@ body{
     cursor: pointer;
 }
 
+@media screen and (max-width:768px) {
+    .blog{
+        width: 100%;
+    }
+    .other-blogs{
+        display: none;
+    }
+}
+
