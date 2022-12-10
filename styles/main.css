@@ -487,6 +487,103 @@ footer{
     cursor: pointer;
 }
 
+.login-section .accounts{
+    background-color: var(--white);
+    width: 30%;
+    margin: 0px auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-60%);
+    padding: 10px;
+}
+
+.accounts .tab-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.accounts .tab-header>div{
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    color: var(--dark-blue);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.accounts .tab-header>div.active{
+    border: 1px solid var(--bule);
+}
+
+.accounts .tab-body{
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.accounts .tab-body>div{
+    position: absolute;
+    top:-150vh;
+    opacity: 0;
+    padding: 5px 25px;
+    transition: opacity 300ms ease-in-out 0ms;
+    width: 90%;
+}
+
+.accounts .tab-body>div.active{
+    top:0;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out 0ms;
+}
+
+.accounts .tab-body>div h2{
+    font-size: 25px;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.accounts .tab-body>div .form-input{
+    margin: 10px 0px;
+}
+
+.accounts .tab-body>div .form-input label{
+    display: block;
+    font-size: 15px;
+    padding-bottom: 3px;
+}
+
+.accounts .tab-body>div .form-input input{
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid var(--bule);
+}
+
+.accounts .tab-body>div .form-input input:focus{
+    outline: none;
+}
+
+.accounts .tab-body>div .form-input button{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--bule);
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* 
 .login{
     background-color: var(--white);
     width: 40vw;
@@ -505,7 +602,7 @@ footer{
     padding: 5px 10px;
     margin-top: 20px;
     width: 25%;
-}
+} */
 
 
 footer span{
