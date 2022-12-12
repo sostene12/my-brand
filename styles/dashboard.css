@@ -182,7 +182,7 @@ table {
   }
 
 #blogs table{
-    width: 50%;
+    width: 100%;
 }
 
 #blogs table td:last-child{
@@ -220,3 +220,32 @@ table {
     background-color: var(--bule);
     color: var(--white);
   }
+
+  #blogs .title{
+    display: flex;
+  }
+#blogs .add-blog{
+    padding: 5px 20px;
+    width: 70%;
+}
+
+#blogs .add-blog form{
+    display: flex;
+    flex-direction: column;
+}
+
+#blogs .add-blog form input{
+    padding: 5px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    outline: none;
+    width: 80%;
+}
+
+#blogs .add-blog button{
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 10px 0px; 
+}
