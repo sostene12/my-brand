@@ -47,18 +47,18 @@ bars.addEventListener('click',(e) =>{
 
 // tabs
 const tab = document.querySelector('.accounts');
-const tabHeader = tab.querySelector('.tab-header');
-const tabHeaderElements = tab.querySelectorAll('.tab-header > div');
-const tabBody = tab.querySelector('.tab-body');
-const tabBodyElements = tab.querySelectorAll('.tab-Body > div');
+const tabHeader = document.querySelector('.tab-header');
+const tabHeaderElements = document.querySelectorAll('.tab-header > div');
+const tabBody = document.querySelector('.tab-body');
+const tabBodyElements = document.querySelectorAll('.tab-Body > div');
 
 
 for(let i=0;i<tabHeaderElements.length;i++){
     tabHeaderElements[i].addEventListener('click',() =>{
        tabHeader.querySelector('.active').classList.remove('active');
         tabHeaderElements[i].classList.add('active');
-        const activeBody = tabBody.querySelector('.active');
-        activeBody.classList.remove('active')
-        tabBodyElements[i].classList.add('active');
+        tabBody.querySelector('.active').classList.remove('active');
+        tabBodyElements[i].classList.add('active')
     });
 }
+

@@ -28,7 +28,7 @@
             </div>
             <div class="sidenav">
                 <div class="nav-contents">
-                    <div class="tab">
+                    <div class="tab active">
                         <span class="icon">
                             <i class="fa-solid fa-table-columns"></i>
                         </span>
@@ -70,9 +70,129 @@
                         <div class="name">Sostene</div>
                         <img src="./images/profile.png" alt="profile img">
                     </div>
-            </div>
+                </div>
+                <div class="data">
+                    <div class="screen active" id="dashboard">
+                        <div class="title">
+                            <h4>Dashboard</h4>
+                        </div>
+                        <div class="description">
+                            <div class="card">
+                                <div class="icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div class="count">78</div>
+                                <div class="users">Users</div>
+                            </div>
+                            <div class="card">
+                                <div class="icon">
+                                    <i class="fa-regular fa-envelope-open"></i>
+                                </div>
+                                <div class="count">78</div>
+                                <div class="users">Emails</div>
+                            </div>
+                            <div class="card">
+                                <div class="icon">
+                                    <i class="fa-brands fa-blogger-b"></i>
+                                </div>
+                                <div class="count">78</div>
+                                <div class="users">Blogs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen" id="blogs">
+                        <div class="title">
+                            <h4>Users</h4>
+                            <table>
+                               <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                               </tr>
+                               <tr>
+                                <td>1</td>
+                                <td>Kaleb Curry</td>
+                                <td>kalebcurry@gmail.com</td>
+                                <td>
+                                    <button>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    <button>
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                </td>
+                               </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="screen" id="blogs">
+                        <div class="title">
+                            <h4>Blogs</h4>
+                            <table>
+                                <tr>
+                                 <th>Id</th>
+                                 <th>Title</th>
+                                 <th>contents</th>
+                                 <th>Action</th>
+                                </tr>
+                                <tr>
+                                 <td>1</td>
+                                 <td>the use of Redux in react Native</td>
+                                 <td>using Redux in react native is almost </td>
+                                 <td>
+                                     <button>
+                                         <i class="fa-solid fa-trash"></i>
+                                     </button>
+                                     <button>
+                                         <i class="fa-solid fa-pen-to-square"></i>
+                                     </button>
+                                 </td>
+                                </tr>
+ 
+                             </table>
+                             <div class="add-blog">
+                                <form action="">
+                                    <label for="title">Title</label>
+                                </form>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="screen" id="blogs">
+                        <div class="title">
+                            <h4>Contacts</h4>
+                            <table>
+                                <tr>
+                                 <th>Id</th>
+                                 <th>Name</th>
+                                 <th>Email</th>
+                                 <th>Message</th>
+                                 <th>Action</th>
+                                </tr>
+                                <tr>
+                                 <td>1</td>
+                                 <td>Kaleb Curry</td>
+                                 <td>kalebcurry@gmail.com</td>
+                                 <td>Iwant to give you a job of creating app using React Native</td>
+                                 <td>
+                                     <button>
+                                         <i class="fa-solid fa-trash"></i>
+                                     </button>
+                                     <button>
+                                         <i class="fa-solid fa-eye"></i>
+                                     </button>
+                                 </td>
+                                </tr>
+ 
+                             </table>
+                        </div>
+                    </div>
+                </div>
+             
            
         </section>
     </div>
+    <script src="./scripts/dashboard.js"></script>
 </body>
 </html>
