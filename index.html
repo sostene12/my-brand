@@ -27,7 +27,8 @@
           <div class="logo">
             <h2><span>NG</span><span>SO</span></h2>
           </div>
-          <div class="nav-items nav-contents">
+          <div class="nav-contents"></div>
+          <div class="nav-items phone">
             <ul class="nav-links">
               <li><a href="#landingpage" class="active">Home</a></li>
               <li><a href="#about-me">About Me</a></li>
@@ -43,7 +44,6 @@
             <span></span>
             <span></span>
           </div>
-          </div>
         </nav>
       </div>
       <main>
@@ -58,7 +58,9 @@
             Designer and UI/Ux designer based in rwanda .
           </div>
           <button class="button">
-            <a href="https://mycv-sostene.netlify.app/" target="_blank">My CV</a>
+            <a href="https://mycv-sostene.netlify.app/" target="_blank"
+              >My CV</a
+            >
           </button>
         </div>
       </main>
@@ -135,47 +137,54 @@
       <div class="blog">
         <h2>My Blog</h2>
         <div class="cards-section">
-            <div class="card">
-              <img src="./images/coding.png" alt="svg image" />
-              <div class="explanation">
-                How to use Fetch api using React js with no errors
-              </div>
-              <h4><a href="blog.html">Read More</a></h4>
+          <div class="card">
+            <img src="./images/coding.png" alt="svg image" />
+            <div class="explanation">
+              How to use Fetch api using React js with no errors
             </div>
-            <div class="card">
-                <img src="./images/Mask group.png" alt="svg image" />
-                <div class="explanation">
-                  How to use Fetch api using React js with no errors
-                </div>
-                <h4><a href="blog.html">Read More</a></h4>
-              </div>
-            
+            <h4><a href="blog.html">Read More</a></h4>
+          </div>
+          <div class="card">
+            <img src="./images/Mask group.png" alt="svg image" />
+            <div class="explanation">
+              How to use Fetch api using React js with no errors
+            </div>
+            <h4><a href="blog.html">Read More</a></h4>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact-section" class="contact-section">
-     
-        <div class="contacts">
-            
-            <div>
-                <h2>Contact Me</h2>
-                <form action="">
-                    <label for="name">Names</label>
-                    <input type="text" >
-                    <label for="email">Email</label>
-                    <input type="text" >
-                    <label for="message">Message</label>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
-                    <button class="button">Submit</button>
-                </form>
-            </div>
-            <div class="image-contact">
-                <img src="./images/contacts-img.png" alt="">
-            </div>
+      <div class="contacts">
+        <div>
+          <h2>Contact Me</h2>
+          <form action="" id="contact-form">
+            <label for="name">Names</label>
+            <input type="text" placeholder="Full Names" name="name" />
+            <span class="nameError"></span>
+            <label for="email">Email</label>
+            <input type="text" placeholder="Email" name="email" />
+            <span class="emailError"></span>
+            <label for="message">Message</label>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="5"
+              name="message"
+              class="message"
+            ></textarea>
+            <span class="messageError"></span>
+            <button class="button">Submit</button>
+          </form>
         </div>
+        <div class="image-contact">
+          <img src="./images/contacts-img.png" alt="" />
+        </div>
+      </div>
     </section>
-   
+
     <section class="login-section">
       <div class="close-icon">
         <i class="fa-solid fa-xmark"></i>
@@ -186,41 +195,44 @@
           <div class="signup">Signup</div>
         </div>
         <div class="tab-body">
-            <div class="login active">
+          <div class="form active">
+              <form method="" class="login-form">
               <h2>Login Here</h2>
               <div class="form-input">
                 <label for="username">User Name</label>
-                <input type="text" placeholder="Enter User Name">
+                <input type="text" placeholder="Enter User Name" name="username" />
               </div>
               <div class="form-input">
                 <label for="password">Password</label>
-                <input type="password" placeholder="Enter Password">
+                <input type="password" placeholder="Enter Password" name="password" />
               </div>
               <div class="form-input">
                 <button>Login</button>
               </div>
+            </form>
             </div>
-            <div class="signup ">
+            <div class="form">
+              <form action="" class="signup-form">
               <h2>Create Account</h2>
               <div class="form-input">
                 <label for="username">User Name</label>
-                <input type="text" placeholder="Enter User Name">
+                <input type="text" placeholder="Enter User Name" name="username" />
               </div>
               <div class="form-input">
                 <label for="email">Email</label>
-                <input type="email" placeholder="Enter Email">
+                <input type="email" placeholder="Enter Email" name="email" />
               </div>
               <div class="form-input">
                 <label for="password">Password</label>
-                <input type="password" placeholder="Enter Password">
+                <input type="password" placeholder="Enter Password" name="password" />
               </div>
               <div class="form-input">
                 <button>Signup</button>
               </div>
+            </form>
             </div>
         </div>
       </div>
-      
     </section>
 
     <footer>
