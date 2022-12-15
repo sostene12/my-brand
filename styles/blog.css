@@ -132,3 +132,27 @@ body{
     }
 }
 
+
+
+
+/* 
+.nav-contents{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    right: 0; 
+    display: none;
+}
+
+.nav-contents ul{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    top: 0;
+    width: 90%;
+    margin: 0px auto;
+    height: 90%;
+} */

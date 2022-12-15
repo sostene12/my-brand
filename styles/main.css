@@ -11,9 +11,7 @@
     font-family: 'Inter', sans-serif;
     color: var(--dark-blue);
 }
-html{
-    scroll-behavior: smooth;
-}
+
 body{
     max-width: 100vw;
     height: 100%;
@@ -63,7 +61,6 @@ nav{
     align-items: center;
 }
 
-
 .nav-items ul{
     display: flex;
     align-items: center;
@@ -77,6 +74,34 @@ nav{
     font-size: 17px;
 }
 
+
+.nav-contents{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--gray);
+    position: absolute;
+    right: -100%;
+    top: 0;
+    z-index: 0;
+    transition: all ease-in 0.3s;
+    display: none;
+}
+
+.nav-contents.open{
+    right: 0;
+}
+
+.nav-contents ul{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+}
+
+.nav-contents ul li{
+    list-style: none;
+    padding: 5px;
+    font-weight: bold;
+}
 
 a{
     text-decoration: none;
@@ -418,6 +443,11 @@ form input,textarea:focus{
     object-fit: contain;
 }
 
+.contacts form span{
+    color: red; 
+    font-size: 12px;
+}
+
 /* footer */
 footer{
     background-color: var(--gray);
@@ -464,6 +494,7 @@ footer{
 .login-section .accounts{
     background-color: var(--white);
     width: 30%;
+    height: 60vh;
     margin: 0px auto;
     position: relative;
     top: 50%;
@@ -496,41 +527,40 @@ footer{
     height: 300px;
     position: relative;
     overflow: hidden;
+    height: 80%;
 }
 
-.accounts .tab-body>div{
-    position: absolute;
-    top:-150vh;
-    opacity: 0;
+.tab-body .form{
+    display: none;
     padding: 5px 25px;
-    transition: opacity 300ms ease-in-out 0ms;
+    transition: display 300ms ease-in-out 0ms;
     width: 90%;
+ 
 }
 
-.accounts .tab-body>div.active{
-    top:0;
-    opacity: 1;
-    transition: opacity 300ms ease-in-out 0ms;
+.tab-body .active{
+    display: block;
+    transition: display 300ms ease-in-out 0ms;
 }
 
-.accounts .tab-body>div h2{
+ .tab-body h2{
     font-size: 25px;
     color: var(--dark-blue);
     text-align: center;
     margin-bottom: 15px;
 }
 
-.accounts .tab-body>div .form-input{
+.tab-body .form-input{
     margin: 10px 0px;
 }
 
-.accounts .tab-body>div .form-input label{
+.tab-body .form-input label{
     display: block;
     font-size: 15px;
     padding-bottom: 3px;
 }
 
-.accounts .tab-body>div .form-input input{
+ .tab-body .form-input input{
     width: 100%;
     margin-bottom: 5px;
     font-size: 15px;
@@ -539,14 +569,14 @@ footer{
     border: 1px solid var(--bule);
 }
 
-.accounts .tab-body>div .form-input input:focus{
+.tab-body .form-input input:focus{
     outline: none;
 }
 
-.accounts .tab-body>div .form-input button{
+ .tab-body .form-input button{
     width: 50%;
     padding: 10px;
-    margin-bottom: 5px;
+    margin: 5px 0px;
     border: none;
     outline: none;
     background-color: var(--bule);
@@ -555,28 +585,6 @@ footer{
     text-align: center;
     cursor: pointer;
 }
-
-
-/* 
-.login{
-    background-color: var(--white);
-    width: 40vw;
-    margin: 40px auto;
-    padding: 20px 30px;
-    border-radius: 10px;
-    transform: translateY(50%);
-}
-
-.login form{
-    display: flex;
-    flex-direction: column;
-}
-
-.login form button{
-    padding: 5px 10px;
-    margin-top: 20px;
-    width: 25%;
-} */
 
 
 footer span{
@@ -609,9 +617,9 @@ footer span{
     .nav-items{
         display: none;
     }
-    .nav-contents{
+    /* .nav-contents{
         display: block;
-    }
+    } */
     .burger{
         display: block;
     }
@@ -729,6 +737,11 @@ footer{
 .icons i{
     font-size: 20px;
     padding: 0px 5px;
+}
+
+/* login */
+.login-section .accounts{
+    width: 90%;
 }
 
 }

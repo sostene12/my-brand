@@ -54,7 +54,7 @@
                         <span>Contacts</span>
                     </div>
                 </div>
-                <div class="tab">
+                <div class="tab logout">
                     <span>
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </span>
@@ -68,7 +68,7 @@
                         <i class="fa-solid fa-bars"></i>
                     </div>
                     <div class="profile">
-                        <div class="name">Sostene</div>
+                        <div class="name">user</div>
                         <img src="./images/profile.png" alt="profile img">
                     </div>
                 </div>
@@ -157,12 +157,12 @@
                            </div>
                              <div class="add-blog">
                                 <h5>Create Blog</h5>
-                                <form action="">
+                                <form action="" enctype="multipart/form-data" >
                                     <label for="title">Title</label>
-                                    <input type="text" placeholder="title" name="" id="">
-                                    <input type="file" name="" id="">
+                                    <input type="text" placeholder="title" name="title" id="">
+                                    <input type="file" name="file" class="image-file" id="image-file">
                                     <label for="title">contents</label>
-                                    <textarea id="mytextarea">Enter the blog Contents!</textarea>
+                                    <textarea id="mytextarea" name="contents">Enter the blog Contents!</textarea>
                                     <button>Create</button>
                                 </form>
                              </div>
@@ -171,7 +171,7 @@
                     <div class="screen" >
                         <div class="title">
                             <h4>Contacts</h4>
-                            <table>
+                            <table class="contacts">
                                 <tr>
                                  <th>Id</th>
                                  <th>Name</th>
