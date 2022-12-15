@@ -108,7 +108,7 @@ contactForm.addEventListener('submit',(e) =>{
     }
 
     // emaill validation
-    if(email.search() || email==""){
+    if(!email.match(emailRegex) || email==""){
         emailError.innerHTML = "please enter the email";
     }
     else{
