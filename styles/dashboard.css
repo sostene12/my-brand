@@ -178,8 +178,15 @@ body{
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
   }
+
+#blogs .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+}
 
 #blogs table{
     width: 100%;
@@ -226,7 +233,7 @@ table {
   }
 #blogs .add-blog{
     padding: 5px 20px;
-    width: 70%;
+    width: 50%;
 }
 
 #blogs .add-blog form{

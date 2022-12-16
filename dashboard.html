@@ -82,22 +82,22 @@
                                 <div class="icon">
                                     <i class="fa-solid fa-users"></i>
                                 </div>
-                                <div class="count">78</div>
+                                <div class="count users-count">78</div>
                                 <div class="users">Users</div>
                             </div>
                             <div class="card">
                                 <div class="icon">
                                     <i class="fa-regular fa-envelope-open"></i>
                                 </div>
-                                <div class="count">78</div>
-                                <div class="users">Emails</div>
+                                <div class="count count-emails">78</div>
+                                <div class="mails">Emails</div>
                             </div>
                             <div class="card">
                                 <div class="icon">
                                     <i class="fa-brands fa-blogger-b"></i>
                                 </div>
-                                <div class="count">78</div>
-                                <div class="users">Blogs</div>
+                                <div class="count blogs-count">78</div>
+                                <div class="blogs">Blogs</div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                         <div class="title">
                            <div>
                             <h4>Blogs</h4>
-                            <table>
+                            <table class="allblogs">
                                 <tr>
                                  <th>Id</th>
                                  <th>Title</th>
@@ -159,10 +159,10 @@
                                 <h5>Create Blog</h5>
                                 <form action="" enctype="multipart/form-data" >
                                     <label for="title">Title</label>
-                                    <input type="text" placeholder="title" name="title" id="">
-                                    <input type="file" name="file" class="image-file" id="image-file">
+                                    <input type="text" placeholder="title" name="title" class="title" id="">
+                                    <input type="file" name="file" class="image-file"  id="image-file">
                                     <label for="title">contents</label>
-                                    <textarea id="mytextarea" name="contents">Enter the blog Contents!</textarea>
+                                    <textarea id="mytextarea" class="contents" name="contents">Enter the blog Contents!</textarea>
                                     <button>Create</button>
                                 </form>
                              </div>
@@ -215,6 +215,7 @@
           ]
         });
       </script>
+      <script src="./scripts/blogs.js"></script>
     <script src="./scripts/dashboard.js"></script>
 </body>
 </html>

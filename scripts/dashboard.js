@@ -20,18 +20,22 @@ logout.addEventListener('click',() =>{
     window.location.replace('index.html');
 });
 
+const getUser = () =>{
+    const user = JSON.parse(localStorage.getItem('user'));
+    const name = document.querySelector('.name');
+    name.innerHTML = user.name
+    console.log(user)
+}
 
-// user
-// const getUser = () =>{
-//     const user = JSON.parse(localStorage.getItem('user'));
-//     const name = document.querySelector('.name');
-//     name.innerHTML = user.name
-//     console.log(user)
-// }
+getUser();
 
-// getUser();
 
-// contacts
+const allUsers = JSON.parse(localStorage.getItem('users'));
+const allMAils = JSON.parse(localStorage.getItem('mails'));
+const allPosts = JSON.parse(localStorage.getItem('blogs'));
+document.querySelector('.users-count').innerHTML = allUsers.length;
+document.querySelector('.count-emails').innerHTML = allMAils.length;
+document.querySelector('.blogs-count').innerHTML = allPosts.length;
 
 
 
@@ -61,35 +65,6 @@ const getContacts = () =>{
 
 getContacts();
 
-
-
-// blogs
-
-
-const manageBlogs = () =>{
-    const blogForm = document.querySelector('.add-blog form');
-    const file =  document.querySelector('#image-file');
-    file.addEventListener('change',(e) =>{
-        const img = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(img);
-        console.log(reader.result)
-        reader.addEventListener('load', () => {
-            console.log(reader.result)
-        });
-    });
-
-    blogForm.addEventListener('submit',(e) =>{
-        e.preventDefault();
-        let title = blogForm.title.value;
-        let contents = blogForm.contents.value;
-        console.log(title,contents);
-    })
-
-
-};
-
-manageBlogs();
 
 
 

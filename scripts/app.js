@@ -35,9 +35,6 @@ navItems.forEach(item =>{
     })
 });
 
-
-
-
 // toggle login
 const loginBtn = document.querySelector('.login-btn');
 const loginSection = document.querySelector('.login-section')
@@ -80,49 +77,6 @@ for(let i=0;i<tabHeaderElements.length;i++){
     });
 }
 
-const nameRegex = '/[a-zA-Z]/g';
-const passwordRegex= "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
-const emailRegex = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/";
-
-
-const manageContacts = () =>{
-    const contactForm = document.querySelector("#contact-form");
-    const nameError = document.querySelector('.nameError');
-    const emailError = document.querySelector('.emailError');
-    const messageError = document.querySelector('.messageError')
-    contactForm.addEventListener('submit',(e) =>{
-        e.preventDefault();
-        console.log(contactForm)
-        const name=contactForm.name.value;
-        const email = contactForm.email.value;
-        const message = contactForm.querySelector('.message').value;
-        const mail = {name,message,email};
-        localStorage.setItem('mail',JSON.stringify(mail));
-        const nameTest = name.search(/[a-zA-Z]/g);
-        // name validation
-        if (nameTest == -1||name == ""){
-            nameError.innerHTML = 'Please enter only letters in this field.';
-        }
-        else{
-            nameError.style.visibility="hidden";
-        }
-
-        // emaill validation
-        if(!email.match(emailRegex) || email==""){
-            emailError.innerHTML = "please enter the email";
-        }
-        else{
-            emailError.style.visibility = "hidden"
-        }
-
-        if(message==""){
-            messageError.innerHTML = "please enter the goals";
-        }
-    })
-};
-
-manageContacts();
-
 const manageSignup = () => {
     const signupForm = document.querySelector('.signup-form');
     signupForm.addEventListener('submit',(e) =>{
@@ -131,7 +85,13 @@ const manageSignup = () => {
         const email = signupForm.email.value;
         const password = signupForm.password.value;
         const user = {name,email,password};
-        localStorage.setItem("user",JSON.stringify(user));
+        let userlocal = localStorage.getItem('user');
+        if(userlocal){
+            userlocal.push(user)
+        } else{
+            localStorage.setItem("user",JSON.stringify(user));
+        }
+
         alert("Your account have been created");
         // if(name=='' || password==''){
         //     alert("please fill all fields");
