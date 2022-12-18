@@ -33,8 +33,9 @@ const createBlogs = () =>{
 
 const allBlogs = JSON.parse(localStorage.getItem('blogs'));
 const blogContents = document.querySelector('.allblogs');
-console.log("blogTable",blogContents)
-allBlogs.forEach(blog => {
+const deleteBlog = document.querySelector('.deleteblog');
+
+allBlogs.forEach((blog,index) => {
     const title = blog.title;
     const message = blog.message;
     const image = blog.img;
@@ -44,7 +45,7 @@ allBlogs.forEach(blog => {
      let c2 = row.insertCell(1);
      let c3 = row.insertCell(2);
      let c4 = row.insertCell(3);
-     c1.innerText = 2;
+     c1.innerText = index+2;
      c2.innerText = blog.title;
      c3.innerText = blog.message;
      c4.innerHTML = `
@@ -56,3 +57,7 @@ allBlogs.forEach(blog => {
  </button>
      `;
 });
+
+deleteBlog.addEventListener('click',() =>{
+    
+})

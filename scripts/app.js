@@ -85,14 +85,15 @@ const manageSignup = () => {
         const email = signupForm.email.value;
         const password = signupForm.password.value;
         const user = {name,email,password};
-        let userlocal = localStorage.getItem('user');
-        if(userlocal){
-            userlocal.push(user)
-        } else{
+        // let userlocal = localStorage.getItem('user');
+        // if(userlocal){
+        //     userlocal.push(user)
+        // } else{
             localStorage.setItem("user",JSON.stringify(user));
-        }
+        // }
 
         alert("Your account have been created");
+        
         // if(name=='' || password==''){
         //     alert("please fill all fields");
         // }

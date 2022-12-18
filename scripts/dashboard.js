@@ -31,39 +31,72 @@ getUser();
 
 
 const allUsers = JSON.parse(localStorage.getItem('users'));
-const allMAils = JSON.parse(localStorage.getItem('mails'));
+const allMails = JSON.parse(localStorage.getItem('mails'));
 const allPosts = JSON.parse(localStorage.getItem('blogs'));
 document.querySelector('.users-count').innerHTML = allUsers.length;
-document.querySelector('.count-emails').innerHTML = allMAils.length;
+document.querySelector('.count-emails').innerHTML = allMails.length;
 document.querySelector('.blogs-count').innerHTML = allPosts.length;
 
 
-
+const mailContents = document.querySelector('.contacts');
+console.log(mailContents)
 const getContacts = () =>{
-    const mails = JSON.parse(localStorage.getItem('mail'));
-    console.log("mails",mails)
-    const contacts = document.querySelector('.title table');
-    console.log("cont",contacts)
-    const row = document.createElement('tr');
-    let data = `
-        <td>6</td>
-        <td>${mails.name}</td>
-        <td>${mails.email}</td>
-        <td>${mails.message}</td>
-        <td>
-            <button>
-                <i class="fa-solid fa-trash"></i>
-            </button>
-            <button>
-                <i class="fa-solid fa-eye"></i>
-            </button>
-        </td>
-    `;
-    row.innerHTML = data;
-    contacts.appendChild(row);
+    allMails.forEach((mail,index) => {
+        const name = mail.name;
+        const email = mail.email;
+        const msg = mail.message;
+        let row = mailContents.insertRow(-1)
+         // Create table cells
+         let c1 = row.insertCell(0);
+         let c2 = row.insertCell(1);
+         let c3 = row.insertCell(2);
+         let c4 = row.insertCell(3);
+         let c5 = row.insertCell(4);
+         c1.innerText = index+2;
+         c2.innerText = name;
+         c3.innerText = email;
+         c4.innerText = msg;
+         c5.innerHTML = `
+         <button>
+         <i class="fa-solid fa-trash"></i>
+     </button>
+     <button>
+         <i class="fa-solid fa-pen-to-square"></i>
+     </button>
+         `;
+    });
 }
 
 getContacts();
+
+const usersContents = document.querySelector('.all-users');
+const users = JSON.parse(localStorage.getItem('users'));
+console.log(usersContents)
+const getUsers = () =>{
+    users.forEach((user,index) => {
+        const name = user.name;
+        const email = user.email;
+        let row = usersContents.insertRow(-1)
+         // Create table cells
+         let c1 = row.insertCell(0);
+         let c2 = row.insertCell(1);
+         let c3 = row.insertCell(2);
+         let c4 = row.insertCell(3);
+         c1.innerText = index+2;
+         c2.innerText = name;
+         c3.innerText = email;
+         c4.innerHTML = `
+         <button>
+            <i class="fa-solid fa-trash"></i>
+        </button>
+        <button>
+            <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+         `;
+    });
+}
+
+getUsers();
 
 
 
