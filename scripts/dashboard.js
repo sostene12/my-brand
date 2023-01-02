@@ -16,15 +16,14 @@ for(let i=0;i<sidebarElements.length;i++){
 // logout
 const logout = document.querySelector('.logout');
 logout.addEventListener('click',() =>{
-    localStorage.removeItem('user');
+    localStorage.removeItem('loggedUser');
     window.location.replace('index.html');
 });
 
 const getUser = () =>{
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('loggedUser'));
     const name = document.querySelector('.name');
-    name.innerHTML = user.name
-    console.log(user)
+    name.innerHTML = user.name;
 }
 
 getUser();

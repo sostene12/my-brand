@@ -1,4 +1,5 @@
 const loginForm = document.querySelector(".login-form");
+console.log(loginForm);
 const loginNameError = document.querySelector(".loginName-Error");
 const loginPasswordError = document.querySelector(".loginPassword-error");
 loginForm.addEventListener("submit", (e) => {
@@ -19,8 +20,11 @@ loginForm.addEventListener("submit", (e) => {
   const user = users.find(
     (user) => user.name === name && user.password === password
   );
-  if (user) {
+  if (!user){
+    alert("invalid user.")
+  }  else {
     let loggeduser = user;
+    localStorage.setItem('loggedUser',JSON.stringify(loggeduser));
     window.location.replace("dashboard.html");
   }
 });
