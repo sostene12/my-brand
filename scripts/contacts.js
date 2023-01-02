@@ -9,8 +9,8 @@ const manageContacts = () =>{
         const name=contactForm.name.value;
         const email = contactForm.email.value;
         const message = contactForm.querySelector('.message').value;
-        atpos = email.indexOf("@");
-        dotpos = email.lastIndexOf(".");
+        let atpos = email.indexOf("@");
+        let dotpos = email.lastIndexOf(".");
         if(name == ''){
             contactNameError.innerHTML = 'Please enter only letters in this field.';
             contactForm.name.focus();

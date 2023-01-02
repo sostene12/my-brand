@@ -1,20 +1,38 @@
-// import {initializeApp} from "firebase/app";
-// import {collection,} from "firebase/auth"
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
-//     authDomain: "portifolio-85003.firebaseapp.com",
-//     projectId: "portifolio-85003",
-//     storageBucket: "portifolio-85003.appspot.com",
-//     messagingSenderId: "832942212654",
-//     appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
-//   };
+import { initializeApp } from "firebase/app";
+import {
+    getFirestore,collection,getDocs
+} from "firebase/firestore"
+const firebaseConfig = {
+    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
+    authDomain: "portifolio-85003.firebaseapp.com",
+    projectId: "portifolio-85003",
+    storageBucket: "portifolio-85003.appspot.com",
+    messagingSenderId: "832942212654",
+    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
+  };
+// Initialize Firebase
+initializeApp(firebaseConfig);
 
-//   initializeApp(firebaseConfig);
+// initialize firestore
+const db = getFirestore();
+// get users
+const colRef = collection(db,'users');
+
+// get users
+getDocs(colRef).then((snapshot) => {
+   let users = [];
+   snapshot.docs.forEach((doc) =>{
+    users.push({...doc.data(),id:doc.id})
+   });
+   console.log(users)
+})
+.catch(error => {
+    console.log(error.message);
+})
 
 
 
-
-// scroll change background
+// // scroll change background
 window.onscroll = function(event){
     let navbar = document.getElementsByClassName("nav-container");
     if((window.innerHeight + window.scrollY) > window.innerHeight){

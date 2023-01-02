@@ -9,8 +9,8 @@ signupForm.addEventListener('submit',(e) =>{
     const name = signupForm.username.value;
     const email = signupForm.email.value;
     const password = signupForm.password.value;
-    atpos = email.indexOf("@");
-    dotpos = email.lastIndexOf(".");
+    let atpos = email.indexOf("@");
+    let dotpos = email.lastIndexOf(".");
     if(name == ''){
         signNameError.innerHTML = 'Please enter only letters in this field.';
         signupForm.username.focus();
