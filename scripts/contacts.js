@@ -1,8 +1,8 @@
 const manageContacts = () =>{
     const contactForm = document.querySelector("#contact-form");
-    const nameError = document.querySelector('.nameError');
-    const emailError = document.querySelector('.emailError');
-    const messageError = document.querySelector('.messageError')
+    const contactNameError = document.querySelector('.nameError');
+    const contactEmailError = document.querySelector('.emailError');
+    const contactMessageError = document.querySelector('.messageError');
     contactForm.addEventListener('submit',(e) =>{
         e.preventDefault();
         console.log(contactForm)
@@ -12,21 +12,22 @@ const manageContacts = () =>{
         atpos = email.indexOf("@");
         dotpos = email.lastIndexOf(".");
         if(name == ''){
-            nameError.innerHTML = 'Please enter only letters in this field.';
+            contactNameError.innerHTML = 'Please enter only letters in this field.';
             contactForm.name.focus();
         } else if((atpos < 1 || dotpos - atpos < 2) && email == ""){
-            emailError.innerHTML = "Invalid email!"
+            contactEmailError.innerHTML = "Invalid email!"
             contactForm.email.focus();
         }
-        else if(message ==""){
-            messageError.innerHTML = "Enter the mesage"
+        else if(message == ""){
+            contactMessageError.innerHTML = "Enter the mesage"
             contactForm.message.focus();
         }
         else{
-            nameError.style.visibility="hidden";
-           messageError.style.visibility = "hidden";
-            emailError.style.visibility = "hidden";
+            contactNameError.style.visibility="hidden";
+            contactMessageError.style.visibility = "hidden";
+           contactEmailError.style.visibility = "hidden";
         }
+        
 
         let mail = {name,email,message}
         let mails = [];
@@ -37,9 +38,8 @@ const manageContacts = () =>{
         }
         mails.push(mail);
         localStorage.setItem('mails',JSON.stringify(mails));
-        contactForm.name.value = '';
-        contactForm.email.value = '';
-        contactForm.message.value = '';
+        contactForm.reset();
+        alert("your message have been recieved!")
     })
 };
 

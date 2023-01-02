@@ -494,12 +494,23 @@ footer{
 .login-section .accounts{
     background-color: var(--white);
     width: 30%;
-    height: 60vh;
+    height: 70vh;
     margin: 0px auto;
     position: relative;
-    top: 50%;
-    transform: translateY(-60%);
+    top: 45%;
+    transform: translateY(-45%);
     padding: 10px;
+}
+
+.message-sent{
+    background-color: rgba(121, 186, 121, 0.529);
+    width: 90%;
+    padding:5px;
+    margin: 5px auto;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
 }
 
 .accounts .tab-header{
@@ -527,7 +538,7 @@ footer{
     height: 300px;
     position: relative;
     overflow: hidden;
-    height: 80%;
+    height: 950%;
 }
 
 .tab-body .form{
@@ -552,6 +563,11 @@ footer{
 
 .tab-body .form-input{
     margin: 10px 0px;
+}
+
+.tab-body .form-input span{
+    color: red;
+    font-size: 12px;
 }
 
 .tab-body .form-input label{

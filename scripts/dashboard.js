@@ -98,6 +98,11 @@ const getUsers = () =>{
 
 getUsers();
 
+const deleteUser = document.querySelector('.delete-user');
+deleteUser.addEventListener('click',(e) =>{
+    console.log(e.target)
+});
+
 
 
 
