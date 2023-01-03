@@ -1,3 +1,23 @@
+import { initializeApp } from "firebase/app";
+import {
+    getFirestore,collection,getDocs,addDoc
+} from "firebase/firestore"
+const firebaseConfig = {
+    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
+    authDomain: "portifolio-85003.firebaseapp.com",
+    projectId: "portifolio-85003",
+    storageBucket: "portifolio-85003.appspot.com",
+    messagingSenderId: "832942212654",
+    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
+  };
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
+const db = getFirestore()
+
+const colRef = collection(db,'mails')
+
+
 const manageContacts = () =>{
     const contactForm = document.querySelector("#contact-form");
     const contactNameError = document.querySelector('.nameError');
@@ -30,17 +50,13 @@ const manageContacts = () =>{
         
 
         let mail = {name,email,message}
-        let mails = [];
-        if(!localStorage.getItem('mails')){
-            mails=[]
-        } else{
-            mails = JSON.parse(localStorage.getItem("mails"))
-        }
-        mails.push(mail);
-        localStorage.setItem('mails',JSON.stringify(mails));
-        contactForm.reset();
+        addDoc(colRef,mail).then(() =>{
+            contactForm.reset();
+        }).catch(error =>{
+            console.log(error);
+        });
         alert("your message have been recieved!")
     })
 };
 
-manageContacts();
+export {manageContacts};

@@ -1,3 +1,5 @@
+import { manageContacts } from "./contacts";
+import { createUser } from "./signup";
 import { initializeApp } from "firebase/app";
 import {
     getFirestore,collection,getDocs
@@ -13,23 +15,33 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
+
+window.addEventListener('DOMContentLoaded',(event) =>{
+    console.log("Content loaded")
+    getMails();
+})
+
 // initialize firestore
 const db = getFirestore();
 // get users
-const colRef = collection(db,'users');
+const colRef = collection(db,'mails');
 
-// get users
-getDocs(colRef).then((snapshot) => {
-   let users = [];
-   snapshot.docs.forEach((doc) =>{
-    users.push({...doc.data(),id:doc.id})
-   });
-   console.log(users)
-})
-.catch(error => {
-    console.log(error.message);
-})
+const getMails = () => {
+    getDocs(colRef).then((snapshot) => {
+        let mails = [];
+        snapshot.docs.forEach((doc) =>{
+            mails.push({...doc.data(),id:doc.id})
+        });
+        console.log("mails",mails);
+     })
+     .catch(error => {
+         console.log(error.message);
+     });
+};
 
+// invoking the imported functions
+manageContacts();
+createUser();
 
 
 // // scroll change background
