@@ -1,5 +1,39 @@
-const loginForm = document.querySelector(".login-form");
-console.log(loginForm);
+import { initializeApp } from "firebase/app";
+import {
+    getFirestore,collection,getDocs,addDoc
+} from "firebase/firestore"
+const firebaseConfig = {
+    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
+    authDomain: "portifolio-85003.firebaseapp.com",
+    projectId: "portifolio-85003",
+    storageBucket: "portifolio-85003.appspot.com",
+    messagingSenderId: "832942212654",
+    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
+  };
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
+const db = getFirestore()
+
+const colRef = collection(db,'users');
+
+let allUsers = [];
+
+const getUser = () =>{
+  getDocs(colRef).then(snapshot =>{
+    snapshot.docs.forEach(doc => {
+      allUsers.push({...doc.data(),id:doc.id});
+      console.log(allUsers)
+    })
+  }).catch(error => console.log(error))
+}
+window.addEventListener('DOMContentLoaded',() =>{
+  getUser();
+});
+
+const login = () =>{
+
+  const loginForm = document.querySelector(".login-form");
 const loginNameError = document.querySelector(".loginName-Error");
 const loginPasswordError = document.querySelector(".loginPassword-error");
 loginForm.addEventListener("submit", (e) => {
@@ -16,10 +50,7 @@ loginForm.addEventListener("submit", (e) => {
     loginPasswordError.style.visibility = "hidden";
     loginNameError.style.visibility = "hidden";
   }
-  const users = JSON.parse(localStorage.getItem("users"));
-  const user = users.find(
-    (user) => user.name === name && user.password === password
-  );
+  const user = allUsers.find(user => user.name == name && user.password == password);
   if (!user){
     alert("invalid user.")
   }  else {
@@ -28,3 +59,7 @@ loginForm.addEventListener("submit", (e) => {
     window.location.replace("dashboard.html");
   }
 });
+
+};
+
+export {login};

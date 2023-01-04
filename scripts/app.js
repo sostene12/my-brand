@@ -1,5 +1,6 @@
 import { manageContacts } from "./contacts";
 import { createUser } from "./signup";
+import { login } from "./login";
 import { initializeApp } from "firebase/app";
 import {
     getFirestore,collection,getDocs
@@ -42,6 +43,7 @@ const getMails = () => {
 // invoking the imported functions
 manageContacts();
 createUser();
+login();
 
 
 // // scroll change background

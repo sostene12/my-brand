@@ -1,25 +1,3 @@
-import { initializeApp } from "firebase/app";
-import {
-    getFirestore,collection,getDocs,addDoc
-} from "firebase/firestore"
-const firebaseConfig = {
-    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
-    authDomain: "portifolio-85003.firebaseapp.com",
-    projectId: "portifolio-85003",
-    storageBucket: "portifolio-85003.appspot.com",
-    messagingSenderId: "832942212654",
-    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
-  };
-// Initialize Firebase
-initializeApp(firebaseConfig);
-
-const db = getFirestore()
-
-const colRef = collection(db,'users');
-getDocs(colRef).then(snapshot => {
-    console.log(snapshot.docs.data);
-}).catch(error => console.log(error))
-
 const sidebarNavs = document.querySelector('.nav-contents');
 const sidebarElements = document.querySelectorAll('.nav-contents > div');
 const navData = document.querySelector('.data');
