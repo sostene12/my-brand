@@ -59,4 +59,4 @@ const manageContacts = () =>{
     })
 };
 
-export {manageContacts};
+manageContacts();

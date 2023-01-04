@@ -1,4 +1,4 @@
-import { manageContacts } from "./contacts";
+// import { manageContacts } from "./contacts";
 import { createUser } from "./signup";
 import { login } from "./login";
 import { initializeApp } from "firebase/app";
@@ -41,7 +41,7 @@ const getMails = () => {
 };
 
 // invoking the imported functions
-manageContacts();
+// manageContacts();
 createUser();
 login();
 
