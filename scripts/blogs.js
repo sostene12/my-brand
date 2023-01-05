@@ -1,6 +1,5 @@
 const blogForm = document.querySelector('.add-blog form');
 const file = document.querySelector('#image-file');
-const title = blogForm.title;
 const message = blogForm.contents;
 blogForm.addEventListener('submit',(e) =>{
     e.preventDefault();
@@ -60,4 +59,7 @@ allBlogs.forEach((blog,index) => {
 
 deleteBlog.addEventListener('click',() =>{
     
-})
+});
+
+
+

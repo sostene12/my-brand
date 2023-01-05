@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-    <link rel="stylesheet" href="./styles/blog.css">
+    <link rel="stylesheet" href="./styles/blog.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,61 +13,81 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="blog">
-            <h2>How to use Fetch API</h2>
-            <img src="./images/coding.png" alt="blog image">
-            <div class="tags">
-                <div class="author">Ng sostene</div>
-                <div class="date">December 12 2022</div>
-            </div>
-            <h4>Introduction</h4>
-            <div class="description">
-                There was a time when XMLHttpRequest was used to make API requests. It didn’t include Promises, and it didn’t make for clean JavaScript code. Using jQuery, you could use the cleaner syntax of jQuery.ajax().Now, JavaScript has its own built-in way to make API requests. This is the Fetch API, a new standard to make server requests with Promises, but which also includes additional features.
-In this tutorial, you will create both GET and POST requests using the Fetch API.
-            </div>
-            <div class="icons">
-                <i class="fa-solid fa-thumbs-up"></i>
-                <i class="fa-solid fa-comment"></i>
-            </div>
+      <div class="blog">
+        <div class="back-button">
+            <a href="index.html">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+            </a>
         </div>
-        <div class="other-blogs">
-            <h2>OTHER BLOGS</h2>
-            <div class="">
-                <div class="related-stories">
-                    <div class="image">
-                        <img src="./images/doctor.jpg" alt="">
-                    </div>
-                    <div class="small-intro">
-                        <div>Create React Native App</div>
-                        <div>
-                            There are a couple of things you need to install to set up the environment for React Native.
-                        </div>
-                        <div>Read More</div>
-                    </div>
-                </div>
-                <div class="related-stories">
-                    <div class="image">
-                        <img src="./images/port2.jpg" alt="">
-                    </div>
-                    <div class="small-intro">
-                        <div>Working Remote</div>
-                        <div>
-                            Best ways to be productive , when working remote job.
-                        </div>
-                        <div>Read More</div>
-                    </div>
-                </div>
-            </div>
+        <h2>How to use Fetch API</h2>
+        <img src="./images/coding.png" alt="blog image" />
+        <div class="tags">
+          <div class="author">Ng sostene</div>
+          <div class="date">December 12 2022</div>
         </div>
+        <h4>Introduction</h4>
+        <div class="description">
+          There was a time when XMLHttpRequest was used to make API requests. It
+          didn’t include Promises, and it didn’t make for clean JavaScript code.
+          Using jQuery, you could use the cleaner syntax of jQuery.ajax().Now,
+          JavaScript has its own built-in way to make API requests. This is the
+          Fetch API, a new standard to make server requests with Promises, but
+          which also includes additional features. In this tutorial, you will
+          create both GET and POST requests using the Fetch API.
+        </div>
+        <div class="icons">
+          <i class="fa-solid fa-thumbs-up"></i>
+          <i class="fa-solid fa-comment comment"></i>
+        </div>
+            <form action="" class="comment-form">
+                <label for="">Leave Comment</label>
+                <textarea name="" id="" cols="30" rows="5" name="comment"></textarea>
+                <button>Comment</button>
+            </form>
+      </div>
+      <div class="other-blogs">
+        <h2>OTHER BLOGS</h2>
+        <div class="">
+          <div class="related-stories">
+            <div class="image">
+              <img src="./images/doctor.jpg" alt="" />
+            </div>
+            <div class="small-intro">
+              <div>Create React Native App</div>
+              <div>
+                There are a couple of things you need to install to set up the
+                environment for React Native.
+              </div>
+              <div>Read More</div>
+            </div>
+          </div>
+          <div class="related-stories">
+            <div class="image">
+              <img src="./images/port2.jpg" alt="" />
+            </div>
+            <div class="small-intro">
+              <div>Working Remote</div>
+              <div>Best ways to be productive , when working remote job.</div>
+              <div>Read More</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+    <script>
+      const comment = document.querySelector(".comment");
+      comment.addEventListener("click", (e) => {
+        window.location.replace('index.html')
+      });
+    </script>
+  </body>
 </html>

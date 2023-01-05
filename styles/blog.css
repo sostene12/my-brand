@@ -25,6 +25,24 @@ body{
     font-weight: 600;
 }
 
+.back-button{
+   width: 30px;
+   height: 30px;
+}
+
+.back-button i{
+    font-size: 30px;
+    color:#0047FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+     position: absolute;
+    top: 30px;
+    left: 40px;
+    cursor: pointer;
+}
+
 .blog h4{
     font-size: 30px;
     font-weight: 500;
@@ -123,12 +141,50 @@ body{
     cursor: pointer;
 }
 
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 15px 0px;
+}
+.comment-form label{
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+.comment-form textarea{
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.comment-form textarea:focus{
+    outline: none;
+}
+
+.comment-form button{
+    background-color: #0047FF;
+    color: #FFFEFE;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    width: 50%;
+    margin: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+
 @media screen and (max-width:768px) {
     .blog{
         width: 100%;
     }
     .other-blogs{
         display: none;
+    }
+    .comment-form{
+        width: 90%;
     }
 }
 

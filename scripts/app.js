@@ -1,7 +1,7 @@
-// import { manageContacts } from "./contacts";
+import { manageContacts } from "./contacts";
 import { createUser } from "./signup";
 import { login } from "./login";
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "/node_modules/@firebase/app";
 import {
     getFirestore,collection,getDocs
 } from "firebase/firestore"
@@ -14,7 +14,7 @@ const firebaseConfig = {
     appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
   };
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 
 window.addEventListener('DOMContentLoaded',(event) =>{
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded',(event) =>{
 })
 
 // initialize firestore
-const db = getFirestore();
+const db = getFirestore(app);
 // get users
 const colRef = collection(db,'mails');
 
@@ -41,7 +41,7 @@ const getMails = () => {
 };
 
 // invoking the imported functions
-// manageContacts();
+manageContacts();
 createUser();
 login();
 

@@ -103,5 +103,12 @@ deleteUser.addEventListener('click',(e) =>{
 });
 
 
+const barIcon = document.querySelector('.icon-bars');
+console.log("Icon",barIcon);
+
+
+console.log("DASHBOARD")
+
+
 
 

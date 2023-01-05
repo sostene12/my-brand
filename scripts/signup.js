@@ -25,7 +25,7 @@ const signPasswordError = document.querySelector('.signPassword-error')
 const msg = document.querySelector('.message-sent span');
 
 const createUser = () =>{
-    signupForm.addEventListener('submit',(e) =>{
+    signupForm.addEventListener('submit',e =>{
         e.preventDefault();
         const name = signupForm.username.value;
         const email = signupForm.email.value;
@@ -59,17 +59,6 @@ const createUser = () =>{
             }).catch(error => {
                 console.log(error)
             });
-
-            // let users = [];
-            // if(!localStorage.getItem('users')){
-            //     users = [];
-            // } else{
-            //     users = JSON.parse(localStorage.getItem('users'));
-            // }
-    
-            // users.push(newUser);
-            // localStorage.setItem('users',JSON.stringify(users))
-            // signupForm.reset();
                 msg.innerHTML =  "Your account have been created";
                 msg.parentNode.style.display = 'block'
             setTimeout(() => {
