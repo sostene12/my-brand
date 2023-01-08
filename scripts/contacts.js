@@ -1,23 +1,17 @@
-import { initializeApp } from "firebase/app";
-import {
-    getFirestore,collection,getDocs,addDoc
-} from "firebase/firestore"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import {getFirestore,collection,onSnapshot,addDoc, getDocs,doc,deleteDoc} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 const firebaseConfig = {
-    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
-    authDomain: "portifolio-85003.firebaseapp.com",
-    projectId: "portifolio-85003",
-    storageBucket: "portifolio-85003.appspot.com",
-    messagingSenderId: "832942212654",
-    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
-  };
-// Initialize Firebase
+  apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
+  authDomain: "portifolio-85003.firebaseapp.com",
+  projectId: "portifolio-85003",
+  storageBucket: "portifolio-85003.appspot.com",
+  messagingSenderId: "832942212654",
+  appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
+};
+
 initializeApp(firebaseConfig);
-
-const db = getFirestore()
-
-const colRef = collection(db,'mails')
-
-
+const db = getFirestore();
+const colcontacts = collection(db,'mails')
 const manageContacts = () =>{
     const contactForm = document.querySelector("#contact-form");
     const contactNameError = document.querySelector('.nameError');
@@ -49,14 +43,15 @@ const manageContacts = () =>{
         }
         
 
-        let mail = {name,email,message}
-        addDoc(colRef,mail).then(() =>{
+        let mail = {name,message,email}
+        addDoc(colcontacts,mail).then(() =>{
             contactForm.reset();
+            // alert("your message have been recieved!")
+            console.log("mail submitted")
         }).catch(error =>{
             console.log(error);
         });
-        alert("your message have been recieved!")
     })
 };
 
-export {manageContacts};
+manageContacts();

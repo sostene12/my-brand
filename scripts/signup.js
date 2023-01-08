@@ -1,23 +1,17 @@
-import { initializeApp } from "firebase/app";
-import {
-    getFirestore,collection,getDocs,addDoc
-} from "firebase/firestore"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import {getFirestore,collection,onSnapshot,addDoc, getDocs,doc,deleteDoc} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 const firebaseConfig = {
-    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
-    authDomain: "portifolio-85003.firebaseapp.com",
-    projectId: "portifolio-85003",
-    storageBucket: "portifolio-85003.appspot.com",
-    messagingSenderId: "832942212654",
-    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
-  };
-// Initialize Firebase
+  apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
+  authDomain: "portifolio-85003.firebaseapp.com",
+  projectId: "portifolio-85003",
+  storageBucket: "portifolio-85003.appspot.com",
+  messagingSenderId: "832942212654",
+  appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
+};
+
 initializeApp(firebaseConfig);
-
-const db = getFirestore()
-
-const colRef = collection(db,'users');
-
-
+const db = getFirestore();
+const colusers = collection(db,'users');
 const signupForm = document.querySelector('.signup-form');
 const signNameError = document.querySelector('.signName-error');
 const signEmailError = document.querySelector('.signEmail-error');
@@ -52,21 +46,21 @@ const createUser = () =>{
                 signEmailError.style.visibility = "hidden";
                 signPasswordError.style.visibility = "hidden";
             }
-            const newUser = {name,email,password};
+            const newUser = {username:name,password:password,email:email};
 
-            addDoc(colRef,newUser).then(() =>{
+            addDoc(colusers,newUser).then(() =>{
                 signupForm.reset();
+                console.log("user created");
             }).catch(error => {
                 console.log(error)
             });
-                msg.innerHTML =  "Your account have been created";
-                msg.parentNode.style.display = 'block'
-            setTimeout(() => {
-                msg.innerHTML =  "Your account have been created";
-                msg.parentNode.style.display = 'none'
-            },2000)
+            //     msg.innerHTML =  "Your account have been created";
+            //     msg.parentNode.style.display = 'block'
+            // setTimeout(() => {
+            //     msg.innerHTML =  "Your account have been created";
+            //     msg.parentNode.style.display = 'none'
+            // },2000)
     });
 };
 
-
-export {createUser};
+createUser();

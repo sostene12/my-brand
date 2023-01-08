@@ -1,26 +1,24 @@
-import { initializeApp } from "firebase/app";
-import {
-    getFirestore,collection,getDocs,addDoc
-} from "firebase/firestore"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import {getFirestore,collection, getDocs} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 const firebaseConfig = {
-    apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
-    authDomain: "portifolio-85003.firebaseapp.com",
-    projectId: "portifolio-85003",
-    storageBucket: "portifolio-85003.appspot.com",
-    messagingSenderId: "832942212654",
-    appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
-  };
-// Initialize Firebase
+  apiKey: "AIzaSyCjyFxy8rFsU65og-sxgt9RPx8FEneTv9g",
+  authDomain: "portifolio-85003.firebaseapp.com",
+  projectId: "portifolio-85003",
+  storageBucket: "portifolio-85003.appspot.com",
+  messagingSenderId: "832942212654",
+  appId: "1:832942212654:web:5e81c7657010fc4dc481bf"
+};
+
 initializeApp(firebaseConfig);
-
-const db = getFirestore()
-
-const colRef = collection(db,'users');
+const db = getFirestore();
+const colusers = collection(db,'users');
 
 let allUsers = [];
 
+console.log('Login')
+
 const getUser = () =>{
-  getDocs(colRef).then(snapshot =>{
+  getDocs(colusers).then(snapshot =>{
     snapshot.docs.forEach(doc => {
       allUsers.push({...doc.data(),id:doc.id});
       console.log(allUsers)
@@ -50,7 +48,7 @@ loginForm.addEventListener("submit", (e) => {
     loginPasswordError.style.visibility = "hidden";
     loginNameError.style.visibility = "hidden";
   }
-  const user = allUsers.find(user => user.name == name && user.password == password);
+  const user = allUsers.find(user => user.username == name && user.password == password);
   if (!user){
     alert("invalid user.")
   }  else {
@@ -62,4 +60,4 @@ loginForm.addEventListener("submit", (e) => {
 
 };
 
-export {login};
+login();

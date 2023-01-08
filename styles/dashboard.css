@@ -184,12 +184,15 @@ table {
 #blogs .title{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     /* flex-wrap: wrap; */
 }
 
 #blogs table{
-    width: 100%;
+    width: 95%;
+    margin: 5px auto;
+
 }
 
 #blogs table td:last-child{
@@ -202,9 +205,9 @@ table {
     padding: 8px;
   }
   
-  tr:nth-child(even) {
+  /* tr:nth-child(even) {
     background-color: #dddddd;
-  }
+  } */
 
   .screen button{
     margin: 0px 20px;
@@ -232,8 +235,11 @@ table {
     display: flex;
   }
 #blogs .add-blog{
-    padding: 5px 20px;
-    width: 50%;
+    padding: 10px 20px;
+    width: 95%;
+    margin: 10px auto;
+    background-color: var(--gray);
+    border-radius: 8px;
 }
 
 #blogs .add-blog form{
@@ -242,11 +248,15 @@ table {
 }
 
 #blogs .add-blog form input{
-    padding: 5px;
+    padding: 10px;
     margin: 5px 0px;
     border-radius: 5px;
+    border: none;
+    width: 90%;
+}
+
+#blogs .add-blog form input:focus{
     outline: none;
-    width: 80%;
 }
 
 #blogs .add-blog button{
